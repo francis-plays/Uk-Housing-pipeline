@@ -1,0 +1,28 @@
+version: 2
+
+models:
+  - name: stg_housing
+    description: "Cleaned and standardised UK house price paid data"
+    columns:
+      - name: transaction_id
+        description: "Unique identifier for each transaction"
+        data_tests:
+          - unique
+          - not_null
+
+      - name: price
+        description: "Sale price in GBP"
+        data_tests:
+          - not_null
+
+      - name: county
+        description: "County of the property"
+        data_tests:
+          - not_null
+
+      - name: property_type
+        description: "Type of property"
+        data_tests:
+          - not_null
+          - accepted_values:
+              values: ['Detached', 'Semi-Detached', 'Terraced', 'Flat', 'Other']
