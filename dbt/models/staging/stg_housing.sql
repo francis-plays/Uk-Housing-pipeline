@@ -59,4 +59,5 @@ cleaned AS (
     WHERE RECORD_STATUS = 'A'  -- only include active records
 )
 
+
 SELECT * FROM cleaned
